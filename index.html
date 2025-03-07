@@ -15,6 +15,7 @@
     <nav>
         <a href="#about">About</a>
         <a href="#proposal">Proposal</a>
+        <a href="#update">Midterm Update</a>
     </nav>
 
     <section id="about">
@@ -30,8 +31,35 @@
         <p><strong>Expected Outcome:</strong> A prototype system capable of accurately predicting network failures, contributing to proactive maintenance and improved network reliability.</p>
     </section>
 
+    <!-- New Section for Midterm Update -->
+    <section id="update">
+        <h2>Midterm Update</h2>
+        <p><strong>Dataset Selection:</strong> We have switched from our initial plan of using generic public datasets to adopting the 
+            <em>SOFI dataset (“Symptom-fault relationship for IP-network”)</em>. This dataset provides a labeled collection 
+            of normal (“NE”) versus faulty (“F”) network states captured from a large, emulated IP network. It includes 
+            SNMP-based performance metrics and covers a range of artificially induced failures such as link down events, 
+            line card failures, and high link utilization.</p>
+        <p><strong>Reason for the Change:</strong> The SOFI dataset’s clear labeling and rich feature set (e.g., inbound/outbound 
+            packets, error rates, operational status) make it ideal for training our predictive model. It also aligns 
+            with real-world conditions where failure instances can be rare.</p>
+        <p><strong>Progress:</strong> 
+            <ul>
+                <li>Preprocessed the dataset (label encoding, scaling) and confirmed class imbalance (~1.5% failures). 
+                    We are addressing this through class weighting and potential oversampling methods.</li>
+                <li>Developed an initial feedforward neural network, achieving high accuracy but a moderate recall 
+                    for the minority “failure” class.</li>
+                <li>Planned next steps include comparing other ML algorithms (Random Forest, Logistic Regression) 
+                    and incorporating time-based splitting to capture sequential patterns more effectively.</li>
+            </ul>
+        </p>
+    </section>
+
     <footer>
         <p>&copy; 2025 Neural Network for Predicting Network Failure. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+025 Neural Network for Predicting Network Failure. All rights reserved.</p>
     </footer>
 </body>
 </html>
