@@ -16,6 +16,7 @@
         <a href="#about">About</a>
         <a href="#proposal">Proposal</a>
         <a href="#update">Midterm Update</a>
+        <a href="#update2">Update 3</a>
     </nav>
 
     <section id="about">
@@ -54,12 +55,45 @@
         </p>
     </section>
 
+    <section id="update2">
+        <h2>Biweekly Update #3</h2>
+        <p><strong>Progress Overview:</strong><br>
+        Over the past two weeks, we have made substantial progress in building and evaluating machine learning models for network failure prediction using the <em>SOFI (Symptom-Fault relationship for IP-Network)</em> dataset. This dataset, developed to capture symptom-fault causal relationships in IP-based enterprise networks, provided a rich and well-labeled foundation for our experiments.</p>
+
+        <p>Our initial focus was on implementing two baseline models using <strong>PyTorch</strong> in <strong>Google Colab</strong>:</p>
+
+        <ul>
+            <li><strong>Supervised Learning Model:</strong> Built using a basic feedforward neural network. It was trained on labeled instances of the SOFI dataset, using cross-entropy loss and accuracy as evaluation metrics. This model performed well overall and showed promise in detecting patterns indicative of faults.</li>
+            <li><strong>Unsupervised Learning Model:</strong> Constructed as an autoencoder, this model learned to reconstruct input data from normal (healthy) instances. High reconstruction error was used as an indicator of anomaly, allowing the model to identify unusual network behaviors without relying on labels.</li>
+        </ul>
+
+        <p><strong>Updated Project Direction:</strong><br>
+        Based on our results, we’ve expanded the scope of our project to compare four different machine learning approaches:</p>
+
+        <ol>
+            <li><strong>Supervised Learning</strong> (Completed)</li>
+            <li><strong>Unsupervised Learning</strong> (Completed)</li>
+            <li><strong>Semi-Supervised Learning</strong> (In Progress) – Combines labeled and unlabeled data to improve generalization while reducing reliance on fully labeled datasets. We plan to experiment with pseudo-labeling and consistency regularization techniques.</li>
+            <li><strong>Time-Dependent (Temporal) Model</strong> (Upcoming) – Will involve sequential models such as RNNs or LSTMs to account for temporal dependencies in network behavior. This model aims to capture how patterns evolve over time, which is essential for forecasting failures.</li>
+        </ol>
+
+        <p><strong>Next Steps:</strong></p>
+        <ul>
+            <li>Complete semi-supervised model and evaluate performance.</li>
+            <li>Preprocess SOFI data into time-series format for temporal model development.</li>
+            <li>Compare all models using performance metrics such as accuracy, precision/recall, and false positive rate.</li>
+            <li>Begin drafting our final report and preparing visualization material.</li>
+        </ul>
+
+        <p><strong>Challenges:</strong><br>
+        Our primary challenges involve preparing the data in a format compatible with each model type and ensuring fair comparisons between them. Time-series preprocessing, in particular, is a focus for the coming week. Additionally, handling the dataset’s class imbalance across model types continues to be an area we’re actively addressing.</p>
+
+        <p>Overall, we’re excited by our progress and believe the comparative evaluation of these models will provide valuable insights for real-world network failure prediction applications.</p>
+    </section>
+
     <footer>
         <p>&copy; 2025 Neural Network for Predicting Network Failure. All rights reserved.</p>
     </footer>
 </body>
 </html>
-025 Neural Network for Predicting Network Failure. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+
