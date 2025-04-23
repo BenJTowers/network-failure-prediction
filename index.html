@@ -17,6 +17,7 @@
         <a href="#proposal">Proposal</a>
         <a href="#update">Midterm Update</a>
         <a href="#update2">Update 3</a>
+        <a href="#final">Final Report</a>
     </nav>
 
     <section id="about">
@@ -94,6 +95,37 @@
     <footer>
         <p>&copy; 2025 Neural Network for Predicting Network Failure. All rights reserved.</p>
     </footer>
+    <section id="final">
+    <h2>Final Report Summary</h2>
+
+    <p><strong>Dataset:</strong> We used the SOFI CoreSwitch-II dataset, which captures over 12,000 labeled network states with performance metrics and artificially induced failures. The dataset is highly imbalanced, with failures comprising less than 2% of records.</p>
+
+    <p><strong>Preprocessing:</strong> We cleaned the data by removing placeholder values, dropped low-variance features, engineered error-based ratios, and scaled inputs. To address class imbalance, we used class weighting and SMOTE for supervised models.</p>
+
+    <p><strong>Models Implemented:</strong></p>
+    <ul>
+        <li><strong>Random Forest:</strong> Served as our baseline. Achieved 68% recall and 30% precision on failures using threshold tuning. Performed best out of standalone models.</li>
+        <li><strong>Autoencoder:</strong> Unsupervised model trained on normal data. Detected 61% of failures using reconstruction error but had a lower precision of 22%.</li>
+        <li><strong>Feedforward Neural Network:</strong> Supervised model trained using binary cross-entropy and dropout. Achieved 64% recall and 38% precision on failures.</li>
+        <li><strong>Support Vector Machine:</strong> Achieved 39% recall and 44% precision. Good at precision but less sensitive to failure cases.</li>
+        <li><strong>Semi-Supervised Model:</strong> Combined autoencoder reconstruction error with Random Forest. Achieved our best results: 71% recall, 50% precision, and an F1-score of 0.59.</li>
+        <li><strong>LSTM Model:</strong> A sequence model that underperformed due to weak temporal structure in the dataset. Only detected 4% of failures.</li>
+    </ul>
+
+    <p><strong>Key Takeaways:</strong></p>
+    <ul>
+        <li>Class imbalance must be addressed to get meaningful results.</li>
+        <li>Simpler models (e.g., Random Forest) performed surprisingly well.</li>
+        <li>Combining models provided the best balance between recall and precision.</li>
+        <li>LSTM was not suitable without clearer time-based patterns.</li>
+        <li>Preprocessing and threshold tuning were more impactful than model complexity in many cases.</li>
+    </ul>
+
+    <p><strong>Conclusion:</strong> This project gave us hands-on experience with a wide range of modeling strategies for anomaly detection. Our findings reinforce that model selection, data handling, and evaluation strategy all contribute significantly to real-world performance.</p>
+    <p>
+    <a href="final_report.pdf" target="_blank">📄 View Full Final Report (PDF)</a>
+    </p>   
+    </section>
 </body>
 </html>
 
